@@ -1,7 +1,7 @@
 import React from 'react'
 
 function App() {
-  return <div>App</div>
+  return <div className="ui container">App</div>
 }
 
 export default App
