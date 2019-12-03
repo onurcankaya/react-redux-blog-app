@@ -7,6 +7,20 @@ class PostList extends React.PureComponent {
     console.log(this.props.fetchPosts())
   }
 
+  renderList = () => {
+    return this.props.posts.map((post) => (
+      <div className="item" key={post.id}>
+        <i className="large middle aligned icon user" />
+        <div className="content">
+          <div className="description">
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+
   render() {
     const { posts } = this.props
 
@@ -14,7 +28,7 @@ class PostList extends React.PureComponent {
       return <div>No posts</div>
     }
     console.log(posts)
-    return <div>Post List</div>
+    return <div className="ui relaxed divided list">{this.renderList()}</div>
   }
 }
 
