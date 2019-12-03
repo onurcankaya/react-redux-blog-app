@@ -8,8 +8,20 @@ class PostList extends React.PureComponent {
   }
 
   render() {
+    const { posts } = this.props
+
+    if (!posts) {
+      return <div>No posts</div>
+    }
+    console.log(posts)
     return <div>Post List</div>
   }
 }
 
-export default connect(null, { fetchPosts })(PostList)
+const mapStateToProps = (state) => {
+  return {
+    posts: state.posts,
+  }
+}
+
+export default connect(mapStateToProps, { fetchPosts })(PostList)
