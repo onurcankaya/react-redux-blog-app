@@ -1,5 +1,5 @@
-const BASE_URL = 'http://jsonplaceholder.typicode.com/posts'
+import axios from 'axios'
 
-export default fetch(BASE_URL)
-  .then((response) => response.json())
-  .then((json) => console.log(json))
+const BASE_URL = 'http://jsonplaceholder.typicode.com'
+
+export default axios.create({ baseURL: BASE_URL })
